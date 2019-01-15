@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LayoutApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+      <% current_page = yield :current_page %>
+      <%= link_to_unless_current("Home", root_path) %>
+      <%= link_to_unless_current("About", about_path) %>
+
+    </nav>
+
+    <%= yield %>
+
+    <!-- <footer>
+      The current page is <%= yield :current_page %>
+    </footer> -->
+
+
+
+  </body>
+</html>
